@@ -21,4 +21,25 @@ put config folder and manage.py outside
 the solution is linter!
 
 
-sdfdsf
+sudo lsof -t -i tcp:8000 | xargs kill -9  
+python manage.py migrate  
+python manage.py makemigrations  
+
+> makemigrations checks for changes on the data shape and creates a file describing the changes.
+migrate applies the migrations to the database!
+The tables and everything are created automatically by Django with 'migrate'
+
+
+python manage.py runserver  
+python manage.py createsuperuser  
+
+* divide and conquer django applications!!
+
+### Django
+
+> framework is that we have to follow their rules like specific words or file names, but library is that we use to build  
+
+1. django-admin startapp "application name" (이름은 복수여야함!)  
+2. 
+
+
