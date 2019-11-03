@@ -36,13 +36,18 @@ python manage.py createsuperuser
 * divide and conquer django applications!!
 
 ### Django
+[django documentation](https://docs.djangoproject.com/en/2.2/)
 
 > framework is that we have to follow their rules like specific words or file names, but library is that we use to build  
 
 1. django-admin startapp "application name" (이름은 복수여야함!)  
+2. make models of each applications
+...
+
 
 ```
 if we see this error, then delete db.sqlite3 file and run makemigrations, migrate.
 django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.0001_initial is applied before its dependency users.0001_initial on database 'default'.
 ```
 
+* django connect to db with **ORM(object relational mapping)** which changes python code to SQL so that db could understand it.
