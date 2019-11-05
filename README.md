@@ -42,6 +42,8 @@ python manage.py createsuperuser
 
 1. django-admin startapp "application name" (이름은 복수여야함!)  
 2. make models of each applications
+3. add config to settings.py (PROJECT_APPS = ["users.apps.UsersConfig", "rooms.apps.RoomsConfig"])
+
 ...
 
 
