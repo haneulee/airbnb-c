@@ -29,5 +29,20 @@ class CustomUserAdmin(UserAdmin):  # UserAdmin을 CustomUserAdmin에서 쓸 수 
         ),
     )
 
+    list_filter = UserAdmin.list_filter + ("superhost",)
+
+    list_display = (
+        "username",
+        "first_name",
+        "last_name",
+        "email",
+        "is_active",
+        "language",
+        "currency",
+        "superhost",
+        "is_staff",
+        "is_superuser",
+    )
+
 
 # admin.site.register(models.User, CustomUserAdmin)
