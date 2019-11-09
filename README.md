@@ -53,3 +53,5 @@ django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.00
 ```
 
 * django connect to db with **ORM(object relational mapping)** which changes python code to SQL so that db could understand it.
+
+* **foreign key** provide a many-to-one relation.
