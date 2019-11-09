@@ -43,6 +43,15 @@ python manage.py createsuperuser
 1. django-admin startapp "application name" (이름은 복수여야함!)  
 2. make models of each applications
 3. add config to settings.py (PROJECT_APPS = ["users.apps.UsersConfig", "rooms.apps.RoomsConfig"])
+4. make fields and fieldset
+5. [how to connect with django models](https://docs.djangoproject.com/en/2.2/ref/models/querysets/)
+    - python manage.py shell
+    - from users.models import User
+    - dir(User) or vars(User)
+    - all_user = User.objects.all()
+    - all_user.filter(superhost=True)
+    - from rooms.models import Room
+    - Room.review_set.all()
 
 ...
 
@@ -55,3 +64,4 @@ django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.00
 * django connect to db with **ORM(object relational mapping)** which changes python code to SQL so that db could understand it.
 
 * **foreign key** provide a many-to-one relation.
+
