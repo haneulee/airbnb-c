@@ -13,6 +13,7 @@ autopep8 = "*"
 django = "==2.2.5"
 pillow = "*"
 django-countires = "*"
+django-seed = "*"
 
 [requires]
 python_version = "3.7"
