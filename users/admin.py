@@ -42,6 +42,8 @@ class CustomUserAdmin(UserAdmin):  # UserAdmin을 CustomUserAdmin에서 쓸 수 
         "superhost",
         "is_staff",
         "is_superuser",
+        "email_verified",
+        "email_secret",
     )
 
 
