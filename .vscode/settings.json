@@ -4,5 +4,6 @@
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "python.linting.flake8Args": ["--max-line-length=100"],
-    "python.formatting.provider": "autopep8"
+    "python.formatting.provider": "autopep8",
+    "git.ignoreLimitWarning": true
 }

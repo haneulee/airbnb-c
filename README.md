@@ -65,3 +65,9 @@ django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.00
 
 * **foreign key** provide a many-to-one relation.
 
+### tailwind CSS
+
+npm install gulp gulp-postcss gulp-sass gulp-csso node-sass -d
+npm installl tailwindcss -d
+npx tailwind init
+npm install autoprefixer -d

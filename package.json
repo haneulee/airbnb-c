@@ -1,0 +1,33 @@
+{
+  "name": "airbnb-c",
+  "version": "0.0.1",
+  "description": "This is a Airbnb clone ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haneulee/airbnb-c.git"
+  },
+  "keywords": [
+    "python",
+    "django"
+  ],
+  "author": "Haneul Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haneulee/airbnb-c/issues"
+  },
+  "homepage": "https://github.com/haneulee/airbnb-c#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0",
+    "tailwindcss": "^1.1.4"
+  }
+}
