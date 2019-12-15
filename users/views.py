@@ -1,12 +1,13 @@
-from django.shortcuts import redirect, reverse
-from django.contrib.auth import authenticate, login, logout
-from django.views.generic import FormView, DetailView
-from django.urls import reverse_lazy
-from . import forms, models
 import os
 import requests
+from django.views.generic import FormView, DetailView, UpdateView
+from django.urls import reverse_lazy
+from django.shortcuts import redirect, reverse
+from django.contrib.auth import authenticate, login, logout
 from django.core.files.base import ContentFile
 from django.contrib import messages
+from . import forms, models
+from django.contrib.auth.views import PasswordChangeView
 
 
 class LoginView(FormView):
@@ -34,8 +35,6 @@ class SignUpView(FormView):
     template_name = "users/signup.html"
     form_class = forms.SignUpForm
     success_url = reverse_lazy("cores:home")
-    # initial = {"first_name": "Haneul",
-    #            "last_name": "Lee", "email": "lovesky4294@gmail.com"}
 
     def form_valid(self, form):
         form.save()
@@ -200,3 +199,26 @@ class UserProfileView(DetailView):
 
     model = models.User
     context_object_name = "user_obj"
+
+
+class UpdateProfileView(UpdateView):
+
+    model = models.User
+    template_name = "users/update-profile.html"
+    fields = (
+        "first_name",
+        "last_name",
+        "gender",
+        "bio",
+        "birthdate",
+        "language",
+        "currency",
+    )
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+
+class UpdatePasswordView(PasswordChangeView):
+
+    template_name = "users/update-password.html"
