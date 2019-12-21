@@ -2,6 +2,7 @@ from django.db import models
 from cores import models as core_models
 from django.utils import timezone
 import datetime
+from . import managers
 
 
 class BookedDay(core_models.TimeStampedModel):
@@ -12,6 +13,8 @@ class BookedDay(core_models.TimeStampedModel):
     class Meta:
         verbose_name = "Booked Day"
         verbose_name_plural = "Booked Days"
+
+    objects = managers.CustomReservationManager()
 
     def __str__(self):
         return str(self.day)
