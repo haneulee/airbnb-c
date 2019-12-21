@@ -1,10 +1,10 @@
 import datetime
+from django.http import Http404
 from django.views.generic import View
 from django.contrib import messages
 from django.shortcuts import render, redirect, reverse
 from rooms import models as room_models
 from . import models
-from django.http import Http404
 
 
 class CreateError(Exception):
@@ -43,3 +43,19 @@ class ReservationDetailView(View):
             self.request, "reservations/detail.html", {
                 "reservation": reservation}
         )
+
+
+def edit_reservation(request, pk, verb):
+    reservation = models.Reservation.objects.get_or_none(pk=pk)
+    if not reservation or (
+        reservation.guest != request.user and reservation.room.host != request.user
+    ):
+        raise Http404()
+    if verb == "confirm":
+        reservation.status = models.Reservation.STATUS_CONFIRMED
+    elif verb == "cancel":
+        reservation.status = models.Reservation.STATUS_CANCELED
+        models.BookedDay.objects.filter(reservation=reservation).delete()
+    reservation.save()
+    messages.success(request, "Reservation Updated")
+    return redirect(reverse("reservations:detail", kwargs={"pk": reservation.pk}))
