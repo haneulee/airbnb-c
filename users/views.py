@@ -11,6 +11,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from . import forms, models, mixins
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.utils import translation
 
 
 class LoginView(mixins.LoggedOutOnlyView, FormView):
@@ -276,5 +277,5 @@ def switch_hosting(request):
 def switch_language(request):
     lang = request.GET.get("lang", None)
     if lang is not None:
-        pass
+        request.session[translation.LANGUAGE_SESSION_KEY] = lang
     return HttpResponse(status=200)
