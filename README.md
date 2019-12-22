@@ -71,3 +71,13 @@ npm install gulp gulp-postcss gulp-sass gulp-csso node-sass -d
 npm installl tailwindcss -d
 npx tailwind init
 npm install autoprefixer -d
+
+### translation
+
+1. make "locale" folder
+2. brew install gettext
+3. brew link gettext --force
+4. {% load i18n %} and add "trans" right after the any
+5. django-admin makemessages --locale=ko
+6. add translated word into django.po
+7. django-admin compilemessages
