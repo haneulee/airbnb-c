@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-22 13:47+0900\n"
+"POT-Creation-Date: 2019-12-24 23:53+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: templates/base.html:26
-msgid "Search By City"
-msgstr "도시 검색"
-
 #: templates/partials/footer.html:6
 msgid "Please don't copy us."
 msgstr "복사하지 마시오."
@@ -30,21 +26,56 @@ msgstr "복사하지 마시오."
 msgid "All rights reserved"
 msgstr "모든 저작권은 보호되어 있습니다."
 
+#: templates/partials/nav.html:7
+msgid "Stop hosting"
+msgstr "호스팅 중단"
+
+#: templates/partials/nav.html:9
+msgid "Start hosting"
+msgstr "호스팅 시작"
+
+#: templates/partials/nav.html:15
+msgid "Create Room"
+msgstr "방 만들기"
+
+#: templates/partials/nav.html:17
+msgid "Favs"
+msgstr ""
+
+#: templates/partials/nav.html:18
+msgid "Profile"
+msgstr "프로필"
+
+#: templates/partials/nav.html:19
+msgid "Log out"
+msgstr "로그아웃"
+
+#: templates/partials/nav.html:21
+msgid "Log in"
+msgstr "로그인"
+
+#: templates/partials/nav.html:22
+msgid "Sign up"
+msgstr "회원가입"
+
+#: templates/rooms/room_detail.html:35
+msgid "Remove from Favourites"
+msgstr "위시리스트에서 제거"
+
+#: templates/rooms/room_detail.html:38
+msgid "Save to Favourites"
+msgstr "위시리스트에 추가"
+
 #: templates/rooms/room_list.html:31
-#, fuzzy, python-format
-#| msgid ""
-#| "Page\n"
-#| "            %(current_page)s of %(total_pages)s"
+#, python-format
 msgid ""
 " Page\n"
 "            %(current_page)s of %(total_pages)s"
 msgstr ""
-"페이지\n"
-"            %(current_page) / %(total_pages)"
 
 #: users/mixins.py:13 users/mixins.py:23
 msgid "Can't go there"
-msgstr "접근할 수 없습니다"
+msgstr "접근할 수 없습니다."
 
 #: users/models.py:21
 msgid "Male"
