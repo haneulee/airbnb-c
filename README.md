@@ -81,3 +81,11 @@ npm install autoprefixer -d
 5. django-admin makemessages --locale=ko
 6. add translated word into django.po
 7. django-admin compilemessages
+
+### deployment
+
+1. pipenv install awsebcli --dev
+2. eb init
+3. mkdir .ebextensions
+4. create django.config in .3
+5. eb create "app title"
