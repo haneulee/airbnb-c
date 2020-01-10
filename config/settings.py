@@ -33,24 +33,25 @@ ALLOWED_HOSTS = [".elasticbeanstalk.com"]
 
 
 DJANGO_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
 ]
 
 THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
-
-PROJECT_APPS = ["cores.apps.CoresConfig",
-                "users.apps.UsersConfig",
-                "rooms.apps.RoomsConfig",
-                "reviews.apps.ReviewsConfig",
-                "reservations.apps.ReservationsConfig",
-                "lists.apps.ListsConfig",
-                "conversations.apps.ConversationsConfig"]
+PROJECT_APPS = [
+    "cores.apps.CoresConfig",
+    "users.apps.UsersConfig",
+    "rooms.apps.RoomsConfig",
+    "reviews.apps.ReviewsConfig",
+    "reservations.apps.ReservationsConfig",
+    "lists.apps.ListsConfig",
+    "conversations.apps.ConversationsConfig",
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
