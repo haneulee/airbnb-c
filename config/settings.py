@@ -26,7 +26,7 @@ SECRET_KEY = 'vwnt(dg-f#8n9#olx6^agfz=y75h)+l$chkdqntbnx&l-x^g9s'
 # DEBUG = bool(os.environ.get("DEBUG"))
 DEBUG = True
 
-ALLOWED_HOSTS = [".elasticbeanstalk.com"]
+ALLOWED_HOSTS = [".elasticbeanstalk.com", "localhost"]
 
 
 # Application definition
