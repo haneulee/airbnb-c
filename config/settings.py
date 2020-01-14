@@ -175,6 +175,7 @@ if not DEBUG:
     AWS_STORAGE_BUCKET_NAME = "airbnb-clone-haneullee"
     AWS_AUTO_CREATE_BUCKET = True
     AWS_BUCKET_ACL = "public-read"
+    AWS_DEFAULT_ACL = None
 
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
