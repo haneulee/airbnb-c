@@ -89,3 +89,8 @@ npm install autoprefixer -d
 3. mkdir .ebextensions
 4. create django.config in .3
 5. eb create "app title"
+
+### static files
+
+1. pipenv install django-storages
+2. python manage.py collectstatic
