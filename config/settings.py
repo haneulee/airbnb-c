@@ -138,15 +138,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+
+STATIC_URL = "/static/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-
 AUTH_USER_MODEL = "users.User"
 
-
 MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+
 MEDIA_URL = "/media/"
 
 
@@ -167,7 +169,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 # Sentry
 
 if not DEBUG:
-    # Sentry
+
     DEFAULT_FILE_STORAGE = "config.custom_storages.UploadStorage"
     STATICFILES_STORAGE = "config.custom_storages.StaticStorage"
     AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
@@ -175,14 +177,19 @@ if not DEBUG:
     AWS_STORAGE_BUCKET_NAME = "airbnb-clone-haneullee"
     AWS_AUTO_CREATE_BUCKET = True
     AWS_BUCKET_ACL = "public-read"
-    AWS_DEFAULT_ACL = None
-
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+    # Sentry
 
     sentry_sdk.init(
         dsn=os.environ.get("SENTRY_URL"),
         integrations=[DjangoIntegration()],
         send_default_pii=True,
+        ignore_errors=["django.security.DisallowedHost"],
     )
+
+    sentry_sdk.integrations.logging.ignore_logger(
+        "django.security.DisallowedHost")
