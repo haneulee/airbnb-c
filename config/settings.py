@@ -141,7 +141,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
@@ -180,7 +180,7 @@ if not DEBUG:
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
     STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/static/"
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
     # Sentry
 
